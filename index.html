@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Sitio Web</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header>
+    <h1>Mi Sitio Web</h1>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <h2>Bienvenido</h2>
+      <p>Somos una empresa dedicada a ofrecer soluciones digitales de calidad. Construimos experiencias web modernas y funcionales para tu negocio.</p>
+      <a href="#servicios" class="btn">Ver servicios</a>
+    </section>
+
+    <section id="servicios" class="servicios">
+      <h2>Nuestros servicios</h2>
+      <div class="cards">
+        <div class="card">
+          <span class="icono">🌐</span>
+          <h3>Diseño web</h3>
+          <p>Sitios modernos, rápidos y adaptados a todos los dispositivos.</p>
+        </div>
+        <div class="card">
+          <span class="icono">📊</span>
+          <h3>Analítica</h3>
+          <p>Datos e insights en tiempo real para tomar mejores decisiones.</p>
+        </div>
+        <div class="card">
+          <span class="icono">🔒</span>
+          <h3>Seguridad</h3>
+          <p>Protección robusta para tu plataforma y tus usuarios.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <h2>Contáctanos</h2>
+      <form>
+        <input type="text" placeholder="Tu nombre">
+        <input type="email" placeholder="Tu correo">
+        <textarea placeholder="Tu mensaje" rows="4"></textarea>
+        <button id="boton" type="button">Enviar mensaje</button>
+        <p id="mensaje"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mi Sitio Web — Todos los derechos reservados</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

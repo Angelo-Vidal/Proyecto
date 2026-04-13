@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  background: #f5f5f5;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+nav a {
+  color: #aed6f1;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: white;
+}
+
+/* Main */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Hero */
+.hero {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  color: #555;
+  margin-bottom: 1.25rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #2c3e50;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #1a252f;
+}
+
+/* Servicios */
+.servicios h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.card .icono {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.card p {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Contacto */
+.contacto {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.contacto h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contacto input,
+.contacto textarea {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: #fafafa;
+  transition: border-color 0.2s;
+}
+
+.contacto input:focus,
+.contacto textarea:focus {
+  outline: none;
+  border-color: #2c3e50;
+}
+
+.contacto button {
+  align-self: flex-start;
+  background: #2c3e50;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contacto button:hover {
+  background: #1a252f;
+}
+
+#mensaje {
+  font-size: 0.875rem;
+  color: green;
+  min-height: 1.2rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid #ddd;
+  margin-top: 2rem;
+}
