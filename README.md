@@ -57,3 +57,9 @@ Se necesitaba conectar los enlaces del nav con las secciones reales del HTML usa
 Implicó usar JavaScript para seleccionar el botón con `getElementById`, escuchar el evento `click`, modificar el contenido del DOM dinámicamente y usar `setTimeout` para limpiar el mensaje automáticamente después de 3 segundos.
 
 ---
+### Prompt 5 — Integrar imagen al hero sin romper el diseño
+**Prompt:**
+> "Esta es la imagen, ¿cómo la agrego a la página sin romper la armonía?"
+
+**Para qué se usó:**
+Se necesitaba incorporar el banner azul en la sección hero de forma que combinara con el resto del diseño. Se usó `object-fit: cover` para evitar deformaciones y se agregó un borde verde sutil para integrarla con la paleta tecnológica del sitio.

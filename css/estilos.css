@@ -1,185 +1,265 @@
+/* ===== RESET Y BASE ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
-  background: #f5f5f5;
-  line-height: 1.6;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Header */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d1117;
+  color: #e6edf3;
+  line-height: 1.7;
+}
+
+/* ===== HEADER ===== */
 header {
-  background: #2c3e50;
-  color: white;
-  padding: 1.2rem 2rem;
+  background-color: #161b22;
+  border-bottom: 2px solid #00c853;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 header h1 {
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  color: #00e676;
+  letter-spacing: 1px;
+}
+
+/* ===== NAV (FLEXBOX) ===== */
+nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
 nav a {
-  color: #aed6f1;
+  color: #c9d1d9;
   text-decoration: none;
-  margin-left: 1.5rem;
   font-size: 0.95rem;
-  transition: color 0.2s;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  color: white;
+  color: #00e676;
 }
 
-/* Main */
+/* ===== MAIN ===== */
 main {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding: 3rem 0 4rem;
+  text-align: center;
+}
+
+.hero-banner {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  display: block;
+  border: 1px solid #00c853;
+}
+
+.hero-content {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-}
-
-/* Hero */
-.hero {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  border: 1px solid #e0e0e0;
-}
-
-.hero h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.hero p {
-  color: #555;
-  margin-bottom: 1.25rem;
-}
-
-.btn {
-  display: inline-block;
-  background: #2c3e50;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: background 0.2s;
-}
-
-.btn:hover {
-  background: #1a252f;
-}
-
-/* Servicios */
-.servicios h2 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
   gap: 1rem;
 }
 
-.card {
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 1.25rem;
+.hero h2 {
+  font-size: 2.2rem;
+  color: #00e676;
 }
 
-.card .icono {
-  font-size: 1.5rem;
-  display: block;
-  margin-bottom: 0.5rem;
+.hero p {
+  font-size: 1.1rem;
+  color: #8b949e;
+  max-width: 600px;
 }
 
-.card h3 {
+/* ===== BOTÓN ===== */
+.btn {
+  display: inline-block;
+  background-color: #00c853;
+  color: #0d1117;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
   font-size: 1rem;
-  margin-bottom: 0.4rem;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.card p {
-  font-size: 0.875rem;
-  color: #666;
+.btn:hover {
+  background-color: #00e676;
+  transform: translateY(-2px);
 }
 
-/* Contacto */
-.contacto {
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 2rem;
+/* ===== SERVICIOS ===== */
+.servicios {
+  padding: 4rem 0;
+  text-align: center;
 }
 
-.contacto h2 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+.servicios h2 {
+  font-size: 1.8rem;
+  color: #00e676;
+  margin-bottom: 2rem;
 }
 
-.contacto form {
+/* CARDS CON FLEXBOX */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  flex: 1 1 250px;
+  max-width: 300px;
+  transition: border-color 0.3s, transform 0.2s;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.75rem;
 }
 
-.contacto input,
-.contacto textarea {
-  padding: 0.6rem 0.9rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-family: inherit;
-  background: #fafafa;
-  transition: border-color 0.2s;
+.card:hover {
+  border-color: #00c853;
+  transform: translateY(-4px);
 }
 
-.contacto input:focus,
-.contacto textarea:focus {
+.icono {
+  font-size: 2rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: #00e676;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #8b949e;
+  text-align: center;
+}
+
+/* ===== CONTACTO ===== */
+.contacto {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-size: 1.8rem;
+  color: #00e676;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #e6edf3;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
   outline: none;
-  border-color: #2c3e50;
+  border-color: #00c853;
 }
 
-.contacto button {
-  align-self: flex-start;
-  background: #2c3e50;
-  color: white;
-  padding: 0.6rem 1.2rem;
+form button {
+  background-color: #00c853;
+  color: #0d1117;
   border: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.contacto button:hover {
-  background: #1a252f;
+form button:hover {
+  background-color: #00e676;
+  transform: translateY(-2px);
 }
 
 #mensaje {
-  font-size: 0.875rem;
-  color: green;
-  min-height: 1.2rem;
+  color: #00e676;
+  font-size: 0.9rem;
+  min-height: 1.5rem;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
+  background-color: #161b22;
+  border-top: 1px solid #21262d;
   text-align: center;
   padding: 1.5rem;
+  margin-top: 3rem;
+  color: #8b949e;
   font-size: 0.85rem;
-  color: #888;
-  border-top: 1px solid #ddd;
-  margin-top: 2rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  nav {
+    gap: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
