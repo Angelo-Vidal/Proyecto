@@ -2,7 +2,7 @@
 
 ## Descripción del proyecto
 
-Sitio web estático desarrollado con HTML, CSS y JavaScript vanilla. Incluye una página principal con sección de bienvenida, tarjetas de servicios y un formulario de contacto. El proyecto fue construido como práctica de maquetación web y organización de archivos front-end.
+Sitio web estático desarrollado con HTML, CSS y JavaScript vanilla. Incluye una página principal con sección de bienvenida, tarjetas de servicios generadas dinámicamente, buscador con filtro en tiempo real, sistema de favoritos y formulario de contacto con validación y modal de confirmación.
 
 ---
 
@@ -12,9 +12,10 @@ Sitio web estático desarrollado con HTML, CSS y JavaScript vanilla. Incluye una
 mi-sitio-web/
 ├── index.html
 ├── css/
-│   └── estilos.css
-├── js/
-│   └── script.js
+│   └── style.css
+├── js
+│   ├── script.js
+│   └── main.js
 └── README.md
 ```
 
@@ -63,3 +64,53 @@ Implicó usar JavaScript para seleccionar el botón con `getElementById`, escuch
 
 **Para qué se usó:**
 Se necesitaba incorporar el banner azul en la sección hero de forma que combinara con el resto del diseño. Se usó `object-fit: cover` para evitar deformaciones y se agregó un borde verde sutil para integrarla con la paleta tecnológica del sitio.
+
+---
+### Evaluacion 2 JS IA
+---
+
+## Prompts utilizados durante el desarrollo
+
+### Prompt 1 — Render dinámico de servicios
+**Prompt:**
+> "Necesito renderizar las tarjetas de servicios dinámicamente desde un array de objetos en JavaScript, sin tenerlas escritas en el HTML."
+
+**Para qué se usó:**
+Se creó un array de objetos con los servicios, una arrow function `crearTarjeta` que genera el HTML de cada tarjeta, y una función `renderizarServicios` que usa `forEach` para recorrer el array e insertar cada tarjeta en el DOM.
+
+---
+
+### Prompt 2 — Filtro dinámico de servicios
+**Prompt:**
+> "Agrega un buscador que filtre las tarjetas en tiempo real por título y descripción mientras el usuario escribe."
+
+**Para qué se usó:**
+Se agregó un input con id `buscador` y un `addEventListener` de tipo `input` que usa el método `filter` para mostrar solo las tarjetas que coincidan con el texto ingresado.
+
+---
+
+### Prompt 3 — Sistema de favoritos
+**Prompt:**
+> "Agrega un botón de favorito en cada tarjeta que cambie de estado al hacer clic y guarde los favoritos en un array."
+
+**Para qué se usó:**
+Se implementó un array `favoritos` y un evento delegado en el contenedor de tarjetas. Al hacer clic en el botón, el id del servicio se agrega o elimina del array y el botón cambia visualmente entre `☆ Favorito` y `★ Guardado`.
+
+---
+
+### Prompt 4 — Validación de formulario con modal
+**Prompt:**
+> "Valida el formulario de contacto con reglas específicas: nombre mínimo 2 letras, correo con formato válido y mensaje mínimo 10 caracteres. El mensaje de éxito debe aparecer en un modal emergente."
+
+**Para qué se usó:**
+Se usó `addEventListener` con el evento `submit`, validaciones con `length` y expresión regular para el correo. El mensaje de confirmación se muestra en un modal con clase `oculto` que se activa y desactiva dinámicamente.
+
+---
+
+## Validaciones y correcciones realizadas
+
+- Se corrigió el orden de funciones en `main.js` para evitar el error `crearTarjeta is not defined`.
+- Se eliminaron referencias a elementos inexistentes (`card`, `cerrarCard`) reemplazándolos por un modal propio.
+- Se mejoró el filtro para buscar tanto por título como por descripción.
+- Se limpian los campos del formulario tras un envío exitoso con `formulario.reset()`.
+- Se cambio el nombre al archivo de css , (estilos.css a styles.css)
