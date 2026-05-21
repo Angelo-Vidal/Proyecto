@@ -26,6 +26,7 @@ const crearTarjeta = (servicio) => {
       <span class="icono">${servicio.icono}</span>
       <h3>${servicio.titulo}</h3>
       <p>${servicio.descripcion}</p>
+      <button class="btn-favorito" data-id="${servicio.id}">☆ Favorito</button>
     </div>
   `;
 };
@@ -54,3 +55,19 @@ buscador.addEventListener("input", function() {
 
 // Llamar la función al cargar la página
 renderizarServicios(servicios);
+// Sistema de favoritos
+let favoritos = [];
+
+document.querySelector(".cards").addEventListener("click", function(e) {
+  if (e.target.classList.contains("btn-favorito")) {
+    const id = Number(e.target.dataset.id);
+
+    if (favoritos.includes(id)) {
+      favoritos = favoritos.filter((fav) => fav !== id);
+      e.target.textContent = "☆ Favorito";
+    } else {
+      favoritos.push(id);
+      e.target.textContent = "★ Guardado";
+    }
+  }
+});
