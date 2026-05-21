@@ -39,11 +39,11 @@ renderizarServicios(servicios);
 // Filtro dinámico de servicios
 const buscador = document.querySelector("#buscador");
 
-buscador.addEventListener("input", function() {
+buscador.addEventListener("input", function () {
   const texto = buscador.value.toLowerCase();
   const filtrados = servicios.filter((servicio) => {
     return servicio.titulo.toLowerCase().includes(texto) ||
-           servicio.descripcion.toLowerCase().includes(texto);
+      servicio.descripcion.toLowerCase().includes(texto);
   });
   renderizarServicios(filtrados);
 });
@@ -51,7 +51,7 @@ buscador.addEventListener("input", function() {
 // Sistema de favoritos
 let favoritos = [];
 
-document.querySelector(".cards").addEventListener("click", function(e) {
+document.querySelector(".cards").addEventListener("click", function (e) {
   if (e.target.classList.contains("btn-favorito")) {
     const id = Number(e.target.dataset.id);
     if (favoritos.includes(id)) {
@@ -62,4 +62,53 @@ document.querySelector(".cards").addEventListener("click", function(e) {
       e.target.textContent = "★ Guardado";
     }
   }
+});
+// Validación del formulario de contacto
+// Validación del formulario de contacto
+const formulario = document.getElementById("formulario");
+const mensaje = document.getElementById("mensaje");
+
+formulario.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const nombre = document.getElementById("nombre").value.trim();
+  const correo = document.getElementById("correo").value.trim();
+  const texto = document.getElementById("mensajeTexto").value.trim();
+
+  mensaje.textContent = "";
+
+  if (nombre.length < 2) {
+    mensaje.textContent = "⚠️ El nombre debe tener al menos 2 letras.";
+    mensaje.style.color = "#ff4d4d";
+    return;
+  }
+
+  const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!regexCorreo.test(correo)) {
+    mensaje.textContent = "⚠️ Ingresa un correo válido, ejemplo: nombre@gmail.com";
+    mensaje.style.color = "#ff4d4d";
+    return;
+  }
+
+  if (texto.length < 10) {
+    mensaje.textContent = "⚠️ El mensaje debe tener al menos 10 caracteres.";
+    mensaje.style.color = "#ff4d4d";
+    return;
+  }
+
+  const modal = document.getElementById("modal");
+  const modalTexto = document.getElementById("modal-texto");
+  const modalCerrar = document.getElementById("modal-cerrar");
+
+  modalTexto.textContent = `✅ Gracias ${nombre}, tu mensaje fue enviado.`;
+  modal.classList.remove("oculto");
+
+  modalCerrar.addEventListener("click", function () {
+    modal.classList.add("oculto");
+  });
+  formulario.reset();
+
+  setTimeout(() => {
+    mensaje.textContent = "";
+  }, 3000);
 });

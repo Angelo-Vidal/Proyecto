@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Sitio Web</title>
   <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
 
   <header>
@@ -25,8 +27,9 @@
       <img src="img/banner.png" alt="Soluciones digitales modernas" class="hero-banner">
       <div class="hero-content">
         <h2>Bienvenido</h2>
-        <p>Transformamos ideas en productos digitales: web, apps y soluciones en la nube, seguros y medibles para impulsar tu crecimiento.</p>
-        
+        <p>Transformamos ideas en productos digitales: web, apps y soluciones en la nube, seguros y medibles para
+          impulsar tu crecimiento.</p>
+
       </div>
     </section>
 
@@ -40,11 +43,11 @@
 
     <section id="contacto" class="contacto">
       <h2>Contáctanos</h2>
-      <form>
-        <input type="text" placeholder="Tu nombre">
-        <input type="email" placeholder="Tu correo">
-        <textarea placeholder="Tu mensaje" rows="4"></textarea>
-        <button id="boton" type="button">Enviar mensaje</button>
+      <form id="formulario">
+        <input type="text" id="nombre" placeholder="Tu nombre">
+        <input type="email" id="correo" placeholder="Tu correo">
+        <textarea id="mensajeTexto" placeholder="Tu mensaje" rows="4"></textarea>
+        <button id="boton" type="submit">Enviar mensaje</button>
         <p id="mensaje"></p>
       </form>
     </section>
@@ -56,5 +59,13 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <!-- Modal de confirmación -->
+  <div id="modal" class="modal oculto">
+    <div class="modal-contenido">
+      <p id="modal-texto"></p>
+      <button id="modal-cerrar">Aceptar</button>
+    </div>
+  </div>
 </body>
+
 </html>
