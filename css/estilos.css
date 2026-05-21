@@ -128,8 +128,7 @@ main {
   color: #00e676;
   margin-bottom: 2rem;
 }
-
-/* CARDS CON FLEXBOX */
+/* CARDS */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -138,33 +137,48 @@ main {
 }
 
 .card {
-  background-color: #161b22;
+  background: linear-gradient(145deg, #161b22, #1c2333);
   border: 1px solid #21262d;
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 2rem 1.5rem;
   flex: 1 1 250px;
-  max-width: 300px;
-  transition: border-color 0.3s, transform 0.2s;
+  max-width: 280px;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover {
-  border-color: #00c853;
-  transform: translateY(-4px);
+  border-color: #00b4d8;
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 180, 216, 0.2);
 }
 
 .icono {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  background: rgba(0, 180, 216, 0.1);
+  padding: 0.8rem;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card h3 {
   font-size: 1.1rem;
-  color: #00e676;
+  color: #00b4d8;
 }
 
+.card p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #8b949e;
+}
 .card p {
   font-size: 0.9rem;
   color: #8b949e;
@@ -262,4 +276,45 @@ footer {
     flex: 1 1 100%;
     max-width: 100%;
   }
+}
+/* Buscador */
+#buscador {
+  display: block;
+  margin: 0 auto 2rem auto;
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1.2rem;
+  border: 2px solid #00b4d8;
+  border-radius: 25px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#buscador:focus {
+  border-color: #0077b6;
+}
+/* Botón favorito */
+.btn-favorito {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #00b4d8;
+  border-radius: 25px;
+  background: transparent;
+  color: #00b4d8;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.btn-favorito:hover {
+  background: #00b4d8;
+  color: white;
+}
+
+.btn-favorito.guardado {
+  background: #0077b6;
+  border-color: #0077b6;
+  color: white;
 }
