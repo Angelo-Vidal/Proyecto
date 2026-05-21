@@ -39,6 +39,18 @@ function renderizarServicios(lista) {
     contenedor.innerHTML += crearTarjeta(servicio);
   });
 }
+// Filtro dinámico de servicios
+const buscador = document.querySelector("#buscador");
+
+buscador.addEventListener("input", function() {
+  const texto = buscador.value.toLowerCase();
+
+  const filtrados = servicios.filter((servicio) => {
+    return servicio.titulo.toLowerCase().includes(texto);
+  });
+
+  renderizarServicios(filtrados);
+});
 
 // Llamar la función al cargar la página
 renderizarServicios(servicios);
